@@ -1,0 +1,253 @@
+@import "tailwindcss";
+
+/* ===============================
+   Beauty Temple – Theme Tokens
+   =============================== */
+@theme {
+  /* Primary – Blush/Rose */
+  --color-primary-100: #a86464; /* deep muted rose */
+  --color-primary-80: #c58787;
+  --color-primary-60: #e6b6b6;
+  --color-primary-40: #f3dada;
+  --color-primary-20: #fbefef;
+  --color-primary-10: #fff7f6; /* lightest veil */
+
+  /* Greys – soft neutral */
+  --color-grey-100: #2f2f2f;
+  --color-grey-80: #505050;
+  --color-grey-60: #757575;
+  --color-grey-40: #aaaaaa;
+  --color-grey-20: #dddddd;
+  --color-grey-10: #eeeeee;
+
+  /* Base */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-bg: #fff6f4; /* site bg tint */
+
+  /* Badges (keep) */
+  --color-badge-yellow: #fff7c4;
+  --color-badge-blue: #dde8ff;
+  --color-badge-mint: #d9fbfa;
+  --color-badge-pink: #ffddfe;
+  --color-badge-purple: #e5ceff;
+
+  /* (Old main-blue removed) */
+
+  /* Fonts */
+  --font-display: var(--font-raleway);
+  --font-text: var(--font-lexend);
+
+  /* Spacing */
+  --spacing-gutter-mobile: 16px;
+  --spacing-gutter-tablet: 24px;
+  --spacing-gutter-desktop: 24px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-tablet: 32px;
+  --spacing-margin-desktop: 100px;
+
+  /* Breakpoints */
+  --breakpoint-mobile: 375px;
+  --breakpoint-tablet: 640px;
+  --breakpoint-desktop: 1440px;
+}
+
+/* ===============================
+   Base
+   =============================== */
+@layer base {
+  body {
+    font-family: var(--font-lexend), var(--font-text), sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--color-grey-100);
+    background-color: var(--color-white);
+  }
+
+  h1 {
+    font-family: var(--font-raleway), var(--font-display), sans-serif;
+    font-size: 42px;
+    line-height: 1;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+
+  h2 {
+    font-family: var(--font-lexend), var(--font-text), sans-serif;
+    font-size: 24px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-weight: 300;
+  }
+
+  h3 {
+    font-family: var(--font-raleway), var(--font-display), sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-family: var(--font-lexend), var(--font-text), sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-weight: 300;
+  }
+
+  h5 {
+    font-family: var(--font-raleway), var(--font-display), sans-serif;
+    font-size: 16px;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+  }
+
+  h6 {
+    font-family: var(--font-lexend), var(--font-text), sans-serif;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-weight: 300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Softer blush focus outline */
+  *:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(230, 182, 182, 0.5); /* primary-60 @ 50% */
+  }
+}
+
+/* ===============================
+   Utilities
+   =============================== */
+@layer utilities {
+  /* Gutters */
+  .px-gutter-mobile {
+    padding-left: var(--spacing-gutter-mobile);
+    padding-right: var(--spacing-gutter-mobile);
+  }
+  .px-gutter-tablet {
+    padding-left: var(--spacing-gutter-tablet);
+    padding-right: var(--spacing-gutter-tablet);
+  }
+  .px-gutter-desktop {
+    padding-left: var(--spacing-gutter-desktop);
+    padding-right: var(--spacing-gutter-desktop);
+  }
+  .px-gutter {
+    padding-left: var(--spacing-gutter-mobile);
+    padding-right: var(--spacing-gutter-mobile);
+  }
+  @media (min-width: 640px) {
+    .px-gutter {
+      padding-left: var(--spacing-gutter-tablet);
+      padding-right: var(--spacing-gutter-tablet);
+    }
+  }
+  @media (min-width: 1024px) {
+    .px-gutter {
+      padding-left: var(--spacing-gutter-desktop);
+      padding-right: var(--spacing-gutter-desktop);
+    }
+  }
+
+  /* Text gradient → blush */
+  .text-gradient-blush {
+    background: linear-gradient(
+      to right,
+      var(--color-primary-80),
+      var(--color-primary-40)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Decorative blur */
+  .blur-decoration {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.2;
+    z-index: -10;
+  }
+}
+
+/* ===============================
+   Components
+   =============================== */
+@layer components {
+  /* Glass morphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Card */
+  .card {
+    background: var(--color-white);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-grey-10);
+  }
+
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-family: var(--font-lexend), sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--color-primary-80);
+    color: var(--color-white);
+  }
+  .btn-primary:hover {
+    background: var(--color-primary-60);
+    box-shadow: 0 10px 15px -3px rgba(197, 135, 135, 0.3); /* primary-80 */
+  }
+  .btn-primary:active {
+    background: var(--color-primary-100);
+  }
+
+  /* Badges (unchanged palette) */
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .badge-exhibition {
+    background: var(--color-badge-yellow);
+    color: var(--color-grey-100);
+  }
+  .badge-interview {
+    background: var(--color-badge-blue);
+    color: var(--color-grey-100);
+  }
+  .badge-publication {
+    background: var(--color-badge-mint);
+    color: var(--color-grey-100);
+  }
+  .badge-workshop {
+    background: var(--color-badge-pink);
+    color: var(--color-grey-100);
+  }
+  .badge-art {
+    background: var(--color-badge-purple);
+    color: var(--color-grey-100);
+  }
+}
