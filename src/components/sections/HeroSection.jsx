@@ -53,7 +53,7 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             {/* Replace href with your real Square booking link */}
             <a
-              href="https://squareup.com/appointments/book/REPLACE_WITH_YOUR_SQUARE_LINK"
+              href="https://app.squareup.com/appointments/book/bgisbcdif1hzwg/LGJD0FN4G9HP9/start"
               className="inline-block bg-primary-80 hover:bg-primary-60 text-white px-8 py-4 rounded-full font-text font-medium transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Book Now
