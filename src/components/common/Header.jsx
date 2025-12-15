@@ -6,7 +6,7 @@ import { IconMenu3, IconX } from "@tabler/icons-react";
 import BeautyTempleLogo from "@/components/ui/BeautyTempleLogo";
 
 const BOOKING_URL =
-  "https://squareup.com/appointments/book/REPLACE_WITH_YOUR_SQUARE_LINK";
+  "https://app.squareup.com/appointments/book/bgisbcdif1hzwg/LGJD0FN4G9HP9/start";
 
 const navLinks = [
   { href: "#about", label: "About" },

@@ -109,7 +109,7 @@ const HeroSection = () => {
 
             <div className="mt-6">
               <a
-                href="https://squareup.com/appointments/book/REPLACE_WITH_YOUR_SQUARE_LINK"
+                href="https://app.squareup.com/appointments/book/bgisbcdif1hzwg/LGJD0FN4G9HP9/start"
                 className="inline-block w-full text-center bg-primary-80 hover:bg-primary-60 text-white px-6 py-3 rounded-lg font-text font-medium transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 Book Now
