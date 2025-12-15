@@ -117,14 +117,13 @@ export default function Footer() {
             </a>
           </div>
           <p>
-            Website by{" "}
             <a
               href="https://olhachernysh.dev"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-20 transition-colors font-medium"
             >
-              Olha Chernysh
+              Website by Olha Chernysh &#8599;
             </a>
           </p>
         </div>
